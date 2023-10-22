@@ -1,7 +1,7 @@
 import {useRef} from "react"
 import styles from "./Input.module.css"
 
-export const Input = () => {
+export const Input = ({value, setValue}: {value: number, setValue: (value : number) => void}) => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <>
@@ -11,11 +11,11 @@ export const Input = () => {
           ref={inputRef}
           type="number"
           id="number"
-          defaultValue={0}
+          defaultValue={value}
         />
       </div>
       <div>
-        <button onClick={() => {console.log(inputRef.current?.value)}}>Hádej</button>
+        <button onClick={() => {console.log(inputRef.current?.value); setValue(Number(inputRef.current?.value))}}>Hádej</button>
       </div>
     </>
   );
