@@ -1,5 +1,4 @@
 import {useRef} from "react"
-import styles from "./Input.module.css"
 
 export const Input = ({value, setValue}: {value: number, setValue: (value : number) => void}) => {
   const inputRef = useRef<HTMLInputElement>(null);
